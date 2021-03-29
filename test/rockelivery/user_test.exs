@@ -45,7 +45,21 @@ defmodule Rockelivery.UserTest do
     end
 
     test "when there are some error, returns an invalid changeset" do
+      params = %{
+        age: 14,
+        address: "Rua da pascoa",
+        cep: "12311231",
+        cpf: "12",
+        email: "rrmartinsjg@gmail.com",
+        password: "133",
+        name: "Rodrigo Martins"
+      }
 
+      response = User.changeset(params)
+
+      expected_response = %{age: ["must be greater than or equal to 18"], cpf: ["should be 11 character(s)"]}
+
+      assert errors_on(response) == expected_response
     end
   end
 

@@ -27,5 +27,4 @@ defmodule Rockelivery.Factory do
       id: "7425ecb1-a6d4-4737-b2f9-89fae26b5a8b"
     }
   end
-
 end

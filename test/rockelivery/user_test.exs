@@ -23,9 +23,10 @@ defmodule Rockelivery.UserTest do
         password: "123456"
       }
 
-      response = params
-      |> User.changeset()
-      |> User.changeset(update_params)
+      response =
+        params
+        |> User.changeset()
+        |> User.changeset(update_params)
 
       assert %Changeset{changes: %{name: "João da Massa"}, valid?: true} = response
     end
@@ -35,11 +36,13 @@ defmodule Rockelivery.UserTest do
 
       response = User.changeset(params)
 
-      expected_response = %{age: ["must be greater than or equal to 18"], cpf: ["should be 11 character(s)"], password: ["should be at least 6 character(s)"]}
+      expected_response = %{
+        age: ["must be greater than or equal to 18"],
+        cpf: ["should be 11 character(s)"],
+        password: ["should be at least 6 character(s)"]
+      }
 
       assert errors_on(response) == expected_response
     end
   end
-
-
 end

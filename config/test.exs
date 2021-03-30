@@ -21,5 +21,4 @@ config :rockelivery, RockeliveryWeb.Endpoint,
 # Print only warnings and errors during test
 config :logger, level: :warn
 
-config :rockelivery, :pbkdf2_elixir,
-  rounds: 1
+config :rockelivery, :pbkdf2_elixir, rounds: 1

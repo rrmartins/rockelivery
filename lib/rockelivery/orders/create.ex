@@ -19,7 +19,7 @@ defmodule Rockelivery.Orders.Create do
   end
 
   defp validate_and_multiply_items(items, items_ids, items_params) do
-    items_map = Map.new(items, fn items -> {item.id, item} end)
+    items_map = Map.new(items, fn item -> {item.id, item} end)
 
     items_ids
     |> Enum.map(fn id -> {id, Map.get(items_map, id)} end)

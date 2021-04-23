@@ -22,3 +22,5 @@ config :rockelivery, RockeliveryWeb.Endpoint,
 config :logger, level: :warn
 
 config :rockelivery, :pbkdf2_elixir, rounds: 1
+
+config :rockelivery, Rockelivery.Users.Create, via_cep_adapter: Rockelivery.ViaCep.ClientMock
